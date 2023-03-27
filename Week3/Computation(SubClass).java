@@ -7,7 +7,8 @@ public class Computation{
 	private int finalGrade;
 	private double gwa;
 	private String status;
-
+	
+	//Initializing Computation class without constructor
 	public Computation() {
 		
 	}
