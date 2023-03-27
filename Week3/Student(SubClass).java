@@ -31,7 +31,6 @@ public class Student {
 	}
 	
 	//Getter
-	
 	public String getStudentName() {
 		return studentName;
 	}
