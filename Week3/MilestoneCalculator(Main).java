@@ -138,10 +138,10 @@ public class MilestoneCalculator {
 						//Get Milestone Grades
 						int milestone1 = comp.getMilestone1();
 						int milestone2 = comp.getMilestone2();
-						int milestone3 = comp.getTerminal();
+						int terminal = comp.getTerminal();
 				
 						//Calling the Compute method from Computation Class
-						int finalGrade = comp.Compute(milestone1, milestone2, milestone3);
+						int finalGrade = comp.Compute(milestone1, milestone2, terminal);
 						double gwa = comp.GWA(finalGrade);
 						
 						//Calling the Status method from Computation Class
@@ -158,7 +158,7 @@ public class MilestoneCalculator {
 							writer.write("Term: " + term + "\n");
 							writer.write("Milestone 1: " + milestone1 + "%" + "\n");
 							writer.write("Milestone 2: " + milestone2 + "%" + "\n");
-							writer.write("Milestone 3: " + milestone3 + "%" + "\n");
+							writer.write("Terminal Assessment: " + terminal + "%" + "\n");
 							writer.write("Final Grade: " + finalGrade + "%" + "\n");
 							writer.write("GWA: " + gwa + "\n");
 							writer.write("Status: " + status + "\n");
