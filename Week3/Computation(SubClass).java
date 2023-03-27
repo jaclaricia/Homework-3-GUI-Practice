@@ -3,7 +3,7 @@ package Week3;
 public class Computation{
 	private int milestone1;
 	private int milestone2;
-	private int milestone3;
+	private int terminal;
 	private int finalGrade;
 	private double gwa;
 	private String status;
@@ -13,15 +13,15 @@ public class Computation{
 	}
 	
 	//Constructor
-	public Computation(int milestone1, int milestone2, int milestone3) {
+	public Computation(int milestone1, int milestone2, int terminal) {
 		this.milestone1 = milestone1;
 		this.milestone2 = milestone2;
-		this.milestone3 = milestone3;
+		this.terminal = terminal;
 	}
 	
 	//Method for computing final grade
-	public int Compute(int milestone1, int milestone2, int milestone3) {
-		return this.finalGrade = (milestone1 + milestone2 + milestone3);
+	public int Compute(int milestone1, int milestone2, int terminal) {
+		return this.finalGrade = (milestone1 + milestone2 + terminal);
 	}
 	
 	//Method for determining the GWA using the computed final grade
@@ -64,8 +64,8 @@ public class Computation{
 		this.milestone2 = milestone2;
 	}
 	
-	public void setMilestone3(int milestone3) {
-		this.milestone3 = milestone3;
+	public void setTerminal(int terminal) {
+		this.terminal = terminal;
 	}
 	
 	//Getter
@@ -78,7 +78,7 @@ public class Computation{
 		return milestone2;
 	}
 	
-	public int getMilestone3() {
-		return milestone3;
+	public int getTerminal() {
+		return terminal;
 	}
 }
