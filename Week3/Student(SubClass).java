@@ -2,12 +2,15 @@ package Week3;
 
 public class Student {
 	private String studentName;
-	private String studentNo;
-	private String schoolYear;
-	private String term;
+	private int studentNo;
+	private int schoolYear;
+	private int term;
 	
-	//Constructor
-	public Student(String studentName, String studentNo, String schoolYear, String Term) {
+	public Student() {
+		
+	}
+	
+	public Student(String studentName, int studentNo, int schoolYear, int term) {
 		this.studentName = studentName;
 		this.studentNo = studentNo;
 		this.schoolYear = schoolYear;
@@ -19,36 +22,33 @@ public class Student {
 		this.studentName = studentName;
 	}
 	
-	public void setStudentNo(String studentNo) {
+	public void setStudentNo(int studentNo) {
 		this.studentNo = studentNo;
 	}
 	
-	public void setSchoolYear(String schoolYear) {
+	public void setSchoolYear(int schoolYear) {
 		this.schoolYear = schoolYear;
 	}
 	
-	public void setTerm(String term) {
+	public void setTerm(int term) {
 		this.term = term;
 	}
 	
 	//Getter
+	
 	public String getStudentName() {
 		return studentName;
 	}
 	
-	public String getStudentNo() {
+	public int getStudentNo() {
 		return studentNo;
 	}
 	
-	public String getSchoolYear() {
+	public int getSchoolYear() {
 		return schoolYear;
 	}
 	
-	public String getTerm() {
+	public int getTerm() {
 		return term;
 	}
 }
-
-
-
-
