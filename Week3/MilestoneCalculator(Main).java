@@ -71,11 +71,11 @@ public class MilestoneCalculator {
 				//Conditional statements for milestone grades inputs
 				if(milestone1 <=0 || milestone1 >25) {
 					JOptionPane.showMessageDialog(null, "Milestone 1 score must not exceed 25 and less than 0.");
-				} else if (milestone2 <= 0 || milestone2 > 40) {
-		            JOptionPane.showMessageDialog(null, "Milestone 2 score must not exceed 40 and less than 0.");
-		        } else if (milestone3 <= 0 || milestone3 > 35) {
-		            JOptionPane.showMessageDialog(null, "Milestone 3 score must not exceed 35 and less than 0.");
-		        } else {	        	
+				}else if (milestone2 <= 0 || milestone2 > 40) {
+		            		JOptionPane.showMessageDialog(null, "Milestone 2 score must not exceed 40 and less than 0.");
+		       		}else if (milestone3 <= 0 || milestone3 > 35) {
+		           		JOptionPane.showMessageDialog(null, "Milestone 3 score must not exceed 35 and less than 0.");
+		        	}else{	        	
 		        	
 		        	//Calls the Compute Method in Computation Class
 		        	int finalGrade = comp.Compute(milestone1, milestone2, milestone3);
@@ -88,7 +88,7 @@ public class MilestoneCalculator {
 		        	//Calls the Status method in Computation Class
 		        	String status = comp.Status(gwa);
 		        	txtStatus.setText(status); 	
-		        }
+				}
 			}
 		});
 		
