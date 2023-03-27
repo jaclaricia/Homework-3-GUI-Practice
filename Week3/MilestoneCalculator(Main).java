@@ -19,7 +19,7 @@ public class MilestoneCalculator {
 	private JFrame frmLaboratory;
 	private JTextField txtMilestone1;
 	private JTextField txtMilestone2;
-	private JTextField txtMilestone3;
+	private JTextField txtTerminal;
 	private JTextField txtFinalGrade;
 	private JTextField txtStudentName;
 	private JTextField txtStudentNo;
@@ -61,24 +61,24 @@ public class MilestoneCalculator {
 				//Set
 				comp.setMilestone1(Integer.parseInt(txtMilestone1.getText()));
 				comp.setMilestone2(Integer.parseInt(txtMilestone2.getText()));
-				comp.setMilestone3(Integer.parseInt(txtMilestone3.getText()));
+				comp.setTerminal(Integer.parseInt(txtTerminal.getText()));
 				
 				//Get
 				int milestone1 = comp.getMilestone1();
 				int milestone2 = comp.getMilestone2();
-				int milestone3 = comp.getMilestone3();
+				int terminal = comp.getTerminal();
 				
 				//Conditional statements for milestone grades inputs
 				if(milestone1 <=0 || milestone1 >25) {
 					JOptionPane.showMessageDialog(null, "Milestone 1 score must not exceed 25 and less than 0.");
-				}else if (milestone2 <= 0 || milestone2 > 40) {
-		            		JOptionPane.showMessageDialog(null, "Milestone 2 score must not exceed 40 and less than 0.");
-		       		}else if (milestone3 <= 0 || milestone3 > 35) {
-		           		JOptionPane.showMessageDialog(null, "Milestone 3 score must not exceed 35 and less than 0.");
-		        	}else{	        	
+				} else if (milestone2 <= 0 || milestone2 > 40) {
+		            JOptionPane.showMessageDialog(null, "Milestone 2 score must not exceed 40 and less than 0.");
+		        } else if (terminal <= 0 || terminal > 35) {
+		            JOptionPane.showMessageDialog(null, "Terminal Assessment score must not exceed 35 and less than 0.");
+		        } else {	        	
 		        	
 		        	//Calls the Compute Method in Computation Class
-		        	int finalGrade = comp.Compute(milestone1, milestone2, milestone3);
+		        	int finalGrade = comp.Compute(milestone1, milestone2, terminal);
 		        	txtFinalGrade.setText(Integer.toString(finalGrade));
 		        	
 		        	//Calls the GWA method in Computation Class
@@ -88,7 +88,7 @@ public class MilestoneCalculator {
 		        	//Calls the Status method in Computation Class
 		        	String status = comp.Status(gwa);
 		        	txtStatus.setText(status); 	
-				}
+		        }
 			}
 		});
 		
@@ -110,8 +110,8 @@ public class MilestoneCalculator {
 						JOptionPane.showMessageDialog(null, "Milestone 1 Grade Invalid.");
 					}else if(txtMilestone2.getText().isEmpty()) {
 						JOptionPane.showMessageDialog(null, "Milestone 2 Grade Invalid.");
-					}else if(txtMilestone3.getText().isEmpty()) {
-						JOptionPane.showMessageDialog(null, "Milestone 3 Grade Invalid.");
+					}else if(txtTerminal.getText().isEmpty()) {
+						JOptionPane.showMessageDialog(null, "Terminal Assessment Grade Invalid.");
 					}else {
 						
 						//Initializing Classes
@@ -127,7 +127,7 @@ public class MilestoneCalculator {
 						//Set Milestone Grades
 						comp.setMilestone1(Integer.parseInt(txtMilestone1.getText()));
 						comp.setMilestone2(Integer.parseInt(txtMilestone2.getText()));
-						comp.setMilestone3(Integer.parseInt(txtMilestone3.getText()));
+						comp.setTerminal(Integer.parseInt(txtTerminal.getText()));
 						
 						//Get Student Information
 						String studentName = stud.getStudentName();
@@ -138,7 +138,7 @@ public class MilestoneCalculator {
 						//Get Milestone Grades
 						int milestone1 = comp.getMilestone1();
 						int milestone2 = comp.getMilestone2();
-						int milestone3 = comp.getMilestone3();
+						int milestone3 = comp.getTerminal();
 				
 						//Calling the Compute method from Computation Class
 						int finalGrade = comp.Compute(milestone1, milestone2, milestone3);
@@ -182,7 +182,7 @@ public class MilestoneCalculator {
 				txtTerm.setText("");
 				txtMilestone1.setText("");
 				txtMilestone2.setText("");
-				txtMilestone3.setText("");
+				txtTerminal.setText("");
 				txtFinalGrade.setText("");
 				txtGWA.setText("");
 				txtStatus.setText("");
@@ -245,9 +245,9 @@ public class MilestoneCalculator {
 		lblMilestone2.setBounds(10, 278, 65, 14);
 		frmLaboratory.getContentPane().add(lblMilestone2);
 		
-		JLabel lblMilestone3 = new JLabel("Milestone 3");
-		lblMilestone3.setBounds(10, 316, 65, 14);
-		frmLaboratory.getContentPane().add(lblMilestone3);
+		JLabel lblTerminal = new JLabel("Terminal");
+		lblTerminal.setBounds(10, 316, 65, 14);
+		frmLaboratory.getContentPane().add(lblTerminal);
 			
 		JLabel lblFinalGrade = new JLabel("Final Grade");
 		lblFinalGrade.setBounds(10, 365, 65, 14);
@@ -362,8 +362,8 @@ public class MilestoneCalculator {
 		txtMilestone2.setColumns(10);
 		
 		//Textfields that ask user to input a "int" type data must be strictly int, if not, textfield will just consume the key pressed
-		txtMilestone3 = new JTextField();
-		txtMilestone3.addKeyListener(new KeyAdapter() {
+		txtTerminal = new JTextField();
+		txtTerminal.addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyTyped(KeyEvent e) {
 				char c = e.getKeyChar();
@@ -372,9 +372,9 @@ public class MilestoneCalculator {
 			}
 		});
 		
-		txtMilestone3.setBounds(97, 313, 86, 20);
-		frmLaboratory.getContentPane().add(txtMilestone3);
-		txtMilestone3.setColumns(10);
+		txtTerminal.setBounds(97, 313, 86, 20);
+		frmLaboratory.getContentPane().add(txtTerminal);
+		txtTerminal.setColumns(10);
 		
 		txtFinalGrade = new JTextField();
 		txtFinalGrade.setBounds(97, 362, 86, 20);
