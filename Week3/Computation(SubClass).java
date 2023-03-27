@@ -14,11 +14,13 @@ public class Computation{
 		this.milestone2 = milestone2;
 		this.milestone3 = milestone3;
 	}
-
+	
+	//Method for computing the final grade
 	public int Compute(int milestone1, int milestone2, int milestone3) {
 		return this.finalGrade = (milestone1 + milestone2 + milestone3);
 	}
 	
+	//method for determining GWA from computed final grade
 	public double GWA(int finalGrade) {
 		if(finalGrade > 96) {
 			return this.gwa = 1.00;
@@ -40,7 +42,8 @@ public class Computation{
 			return this.gwa = 3.00;
 		}else return this.gwa = 5.00;
 	}
-
+	
+	//Determining the statud of student (pass or fail) by using the GWA
 	public String Status(double gwa) {
 		if(gwa != 5.00) {
 			return status = "PASSED";
