@@ -88,7 +88,7 @@ public class MilestoneCalculator {
 		        	//Calls the Status method in Computation Class
 		        	String status = comp.Status(gwa);
 		        	txtStatus.setText(status); 	
-		        }
+				}
 			}
 		});
 		
