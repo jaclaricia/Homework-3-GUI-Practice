@@ -8,7 +8,7 @@ public class Computation{
 	private double gwa;
 	private String status;
 	
-	//Initializing Computation class without constructor
+	//Will use to initialize Computation class without constructor
 	public Computation() {
 		
 	}
