@@ -6,6 +6,7 @@ public class Student {
 	private int schoolYear;
 	private int term;
 	
+	//Will be use to initialize Student class without constructor
 	public Student() {
 		
 	}
