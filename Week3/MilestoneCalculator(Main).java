@@ -154,6 +154,8 @@ public class MilestoneCalculator {
 							writer.write("\n");
 							writer.write("Student Name: " + studentName + "\n");
 							writer.write("Student No.: " + studentNo + "\n");
+							writer.write("School Year: " + schoolYear + "\n");
+							writer.write("Term: " + term + "\n");
 							writer.write("Milestone 1: " + milestone1 + "%" + "\n");
 							writer.write("Milestone 2: " + milestone2 + "%" + "\n");
 							writer.write("Milestone 3: " + milestone3 + "%" + "\n");
