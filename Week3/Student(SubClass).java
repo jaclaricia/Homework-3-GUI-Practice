@@ -6,6 +6,7 @@ public class Student {
 	private String schoolYear;
 	private String term;
 	
+	//Constructor
 	public Student(String studentName, String studentNo, String schoolYear, String Term) {
 		this.studentName = studentName;
 		this.studentNo = studentNo;
