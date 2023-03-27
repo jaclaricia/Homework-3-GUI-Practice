@@ -8,6 +8,10 @@ public class Computation{
 	private double gwa;
 	private String status;
 
+	public Computation() {
+		
+	}
+	
 	//Constructor
 	public Computation(int milestone1, int milestone2, int milestone3) {
 		this.milestone1 = milestone1;
@@ -49,4 +53,32 @@ public class Computation{
 			return status = "PASSED";
 		}else return status = "FAILED";
 	}		
+	
+	//Setter
+	
+	public void setMilestone1(int milestone1) {
+		this.milestone1 = milestone1;
+	}
+	
+	public void setMilestone2(int milestone2) {
+		this.milestone2 = milestone2;
+	}
+	
+	public void setMilestone3(int milestone3) {
+		this.milestone3 = milestone3;
+	}
+	
+	//Getter
+	
+	public int getMilestone1() {
+		return milestone1;
+	}
+	
+	public int getMilestone2() {
+		return milestone2;
+	}
+	
+	public int getMilestone3() {
+		return milestone3;
+	}
 }
