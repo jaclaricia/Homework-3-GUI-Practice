@@ -120,9 +120,9 @@ public class MilestoneCalculator {
 						
 						//Set Student Information
 						stud.setStudentName(txtStudentName.getText());
-						stud.setStudentNo(txtStudentNo.getText());
-						stud.setSchoolYear(txtSchoolYear.getText());
-						stud.setTerm(txtTerm.getText());
+						stud.setStudentNo(Integer.parseInt(txtStudentNo.getText()));
+						stud.setSchoolYear(Integer.parseInt(txtSchoolYear.getText()));
+						stud.setTerm(Integer.parseInt(txtTerm.getText()));
 						
 						//Set Milestone Grades
 						comp.setMilestone1(Integer.parseInt(txtMilestone1.getText()));
@@ -131,9 +131,9 @@ public class MilestoneCalculator {
 						
 						//Get Student Information
 						String studentName = stud.getStudentName();
-						String studentNo= stud.getStudentNo();
-						String schoolYear = stud.getSchoolYear();
-						String term = stud.getTerm();
+						int studentNo= stud.getStudentNo();
+						int schoolYear = stud.getSchoolYear();
+						int term = stud.getTerm();
 						
 						//Get Milestone Grades
 						int milestone1 = comp.getMilestone1();
