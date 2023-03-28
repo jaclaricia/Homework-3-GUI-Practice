@@ -13,6 +13,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.Color;
+import java.awt.event.FocusAdapter;
+import java.awt.event.FocusEvent;
 
 public class MilestoneCalculator {
 
@@ -43,7 +45,6 @@ public class MilestoneCalculator {
 			}
 		});
 	}
-
 	/**
 	 * Create the application.
 	 */
@@ -58,37 +59,50 @@ public class MilestoneCalculator {
 				//Initializing Computation Class
 				Computation comp = new Computation();
 				
-				//Set
-				comp.setMilestone1(Integer.parseInt(txtMilestone1.getText()));
-				comp.setMilestone2(Integer.parseInt(txtMilestone2.getText()));
-				comp.setTerminal(Integer.parseInt(txtTerminal.getText()));
+				String strMilestone1 = txtMilestone1.getText();
+				String strMilestone2 = txtMilestone2.getText();
+				String strMilestone3 = txtTerminal.getText();
+
+					if(strMilestone1.isEmpty()) {
+						JOptionPane.showMessageDialog(null, "Milestones and Terminal Assessment must have value.");
+					}else if(strMilestone2.isEmpty()) {
+						JOptionPane.showMessageDialog(null, "Milestones and Terminal Assessment must have value.");
+					}else if(strMilestone3.isEmpty()) {
+						JOptionPane.showMessageDialog(null, "Milestones and Terminal Assessment must have value.");
+					}else {
 				
-				//Get
-				int milestone1 = comp.getMilestone1();
-				int milestone2 = comp.getMilestone2();
-				int terminal = comp.getTerminal();
+						//Set
+						comp.setMilestone1(Integer.parseInt(txtMilestone1.getText()));
+						comp.setMilestone2(Integer.parseInt(txtMilestone2.getText()));
+						comp.setTerminal(Integer.parseInt(txtTerminal.getText()));
 				
-				//Conditional statements for milestone grades inputs
-				if(milestone1 <=0 || milestone1 >25) {
-					JOptionPane.showMessageDialog(null, "Milestone 1 score must not exceed 25 and less than 0.");
-				} else if (milestone2 <= 0 || milestone2 > 40) {
-		            JOptionPane.showMessageDialog(null, "Milestone 2 score must not exceed 40 and less than 0.");
-		        } else if (terminal <= 0 || terminal > 35) {
-		            JOptionPane.showMessageDialog(null, "Terminal Assessment score must not exceed 35 and less than 0.");
-		        } else {	        	
+						//Get
+						int milestone1 = comp.getMilestone1();
+						int milestone2 = comp.getMilestone2();
+						int terminal = comp.getTerminal();			
+								
+						//Conditional statements for milestone grades inputs
+						if(milestone1 <=0 || milestone1 >25) {
+							JOptionPane.showMessageDialog(null, "Milestone 1 score must not exceed 25 and less than 0.");
+						}else if (milestone2 <= 0 || milestone2 > 40) {
+							JOptionPane.showMessageDialog(null, "Milestone 2 score must not exceed 40 and less than 0.");
+						}else if (terminal <= 0 || terminal > 35) {
+							JOptionPane.showMessageDialog(null, "Terminal Assessment score must not exceed 35 and less than 0.");
+						}else {	        	
 		        	
-		        	//Calls the Compute Method in Computation Class
-		        	int finalGrade = comp.Compute(milestone1, milestone2, terminal);
-		        	txtFinalGrade.setText(Integer.toString(finalGrade));
+							//Calls the Compute Method in Computation Class
+							int finalGrade = comp.Compute(milestone1, milestone2, terminal);
+							txtFinalGrade.setText(Integer.toString(finalGrade));
 		        	
-		        	//Calls the GWA method in Computation Class
-		        	double gwa = comp.GWA(finalGrade);
-		        	txtGWA.setText(Double.toString(gwa));
+							//Calls the GWA method in Computation Class
+							double gwa = comp.GWA(finalGrade);
+							txtGWA.setText(Double.toString(gwa));
 		        	
-		        	//Calls the Status method in Computation Class
-		        	String status = comp.Status(gwa);
-		        	txtStatus.setText(status); 	
-				}
+							//Calls the Status method in Computation Class
+							String status = comp.Status(gwa);
+							txtStatus.setText(status); 	
+						}
+					}
 			}
 		});
 		
@@ -182,9 +196,9 @@ public class MilestoneCalculator {
 				txtStudentNo.setText("");
 				txtSchoolYear.setText("");
 				txtTerm.setText("");
-				txtMilestone1.setText("");
-				txtMilestone2.setText("");
-				txtTerminal.setText("");
+				txtMilestone1.setText("0");
+				txtMilestone2.setText("0");
+				txtTerminal.setText("0");
 				txtFinalGrade.setText("");
 				txtGWA.setText("");
 				txtStatus.setText("");
@@ -272,7 +286,8 @@ public class MilestoneCalculator {
 		frmLaboratory.getContentPane().add(lblStudentNo);
 			
 		//Textfield required input
-		//Textfields that ask user to input a "String" type data must be strictly string, if not, textfield will just consume the key pressed
+		
+		//Textfields that ask user to input a "String" datatype must be strictly string, if not, textfield will just consume the key pressed
 		txtStudentName = new JTextField();
 		txtStudentName.addKeyListener(new KeyAdapter() {
 			@Override
@@ -287,7 +302,7 @@ public class MilestoneCalculator {
 		frmLaboratory.getContentPane().add(txtStudentName);
 		txtStudentName.setColumns(10);
 		
-		//Textfields that ask user to input a "int" type data must be strictly int, if not, textfield will just consume the key pressed
+		//Textfields that ask user to input a "int" datatype must be strictly int, if not, textfield will just consume the key pressed
 		txtStudentNo = new JTextField();
 		txtStudentNo.addKeyListener(new KeyAdapter() {
 			@Override
@@ -302,7 +317,7 @@ public class MilestoneCalculator {
 		txtStudentNo.setBounds(10, 123, 173, 20);
 		frmLaboratory.getContentPane().add(txtStudentNo);
 		
-		//Textfields that ask user to input a "int" type data must be strictly int, if not, textfield will just consume the key pressed
+		//Textfields that ask user to input a "int" datatype must be strictly int, if not, textfield will just consume the key pressed
 		txtSchoolYear = new JTextField();
 		txtSchoolYear.addKeyListener(new KeyAdapter() {
 			@Override
@@ -317,7 +332,7 @@ public class MilestoneCalculator {
 		frmLaboratory.getContentPane().add(txtSchoolYear);
 		txtSchoolYear.setColumns(10);
 		
-		//Textfields that ask user to input a "int" type data must be strictly int, if not, textfield will just consume the key pressed
+		//Textfields that ask user to input a "int" datatype must be strictly int, if not, textfield will just consume the key pressed
 		txtTerm = new JTextField();
 		txtTerm.addKeyListener(new KeyAdapter() {
 			@Override
@@ -332,8 +347,16 @@ public class MilestoneCalculator {
 		frmLaboratory.getContentPane().add(txtTerm);
 		txtTerm.setColumns(10);
 		
-		//Textfields that ask user to input a "int" type data must be strictly int, if not, textfield will just consume the key pressed
+		//Textfields that ask user to input a "int" datatype must be strictly int, if not, textfield will just consume the key pressed
 		txtMilestone1 = new JTextField();
+		txtMilestone1.addFocusListener(new FocusAdapter() {
+			@Override
+			//Removes the predefined value in textfield
+			public void focusGained(FocusEvent e) {
+				txtMilestone1.setText("");
+			}
+
+		});
 		txtMilestone1.setForeground(Color.BLACK);
 		txtMilestone1.addKeyListener(new KeyAdapter() {
 			@Override
@@ -348,7 +371,7 @@ public class MilestoneCalculator {
 		frmLaboratory.getContentPane().add(txtMilestone1);
 		txtMilestone1.setColumns(10);
 		
-		//Textfields that ask user to input a "int" type data must be strictly int, if not, textfield will just consume the key pressed
+		//Textfields that ask user to input a "int" datatype must be strictly int, if not, textfield will just consume the key pressed
 		txtMilestone2 = new JTextField();
 		txtMilestone2.addKeyListener(new KeyAdapter() {
 			@Override
@@ -363,7 +386,7 @@ public class MilestoneCalculator {
 		frmLaboratory.getContentPane().add(txtMilestone2);
 		txtMilestone2.setColumns(10);
 		
-		//Textfields that ask user to input a "int" type data must be strictly int, if not, textfield will just consume the key pressed
+		//Textfields that ask user to input a "int" data must be strictly int, if not, textfield will just consume the key pressed
 		txtTerminal = new JTextField();
 		txtTerminal.addKeyListener(new KeyAdapter() {
 			@Override
