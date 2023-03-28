@@ -1,14 +1,14 @@
 package Week3;
 
 public class Computation{
+	
 	private int milestone1;
 	private int milestone2;
 	private int terminal;
 	private int finalGrade;
 	private double gwa;
 	private String status;
-	
-	//Will use to initialize Computation class without constructor
+
 	public Computation() {
 		
 	}
@@ -47,6 +47,8 @@ public class Computation{
 			return this.gwa = 3.00;
 		}else return this.gwa = 5.00;
 	}
+	
+	
 	
 	//Method for determining the student status using the GWA
 	public String Status(double gwa) {
